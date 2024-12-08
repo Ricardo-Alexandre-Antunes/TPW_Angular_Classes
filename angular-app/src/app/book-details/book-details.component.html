@@ -1,0 +1,51 @@
+<div *ngIf="book" class="container mt-4">
+    <h2 class="mb-4 text-primary">Information on {{book.title | uppercase}}</h2>
+    
+    <div class="mb-3">
+        <span class="fw-bold">Num:</span> {{book.id}}
+    </div>
+    
+    <form>
+        <div class="mb-3">
+            <label for="title" class="form-label fw-bold">Title:</label>
+            <input
+                id="title"
+                [(ngModel)]="book.title"
+                placeholder="Enter title"
+                class="form-control"
+                [ngModelOptions]="{standalone: true}"  
+            />
+        </div>
+        
+        <div class="mb-3">
+            <label for="date" class="form-label fw-bold">Date:</label>
+            <input
+                id="date"
+                [(ngModel)]="book.date"
+                placeholder="Enter date"
+                class="form-control"
+                [ngModelOptions]="{standalone: true}"  
+            />
+        </div>
+        
+        <div class="mb-3">
+            <label for="authors" class="form-label fw-bold">Authors:</label>
+            <select id="authors" [(ngModel)]="selectedAuthors" multiple class="form-select" [ngModelOptions]="{standalone: true}">
+                <option *ngFor="let author of authors" [ngValue]="author">{{ author.name }}</option>
+            </select>
+        </div>
+        
+        <div class="mb-3">
+            <label for="publisher" class="form-label fw-bold">Publisher:</label>
+            <select id="publisher" [(ngModel)]="selectedPublisher" class="form-select" [ngModelOptions]="{standalone: true}">
+                <option *ngFor="let publisher of publishers" [ngValue]="publisher">{{ publisher.name }}</option>
+            </select>
+        </div>
+    </form>
+    
+    <div>
+        <button class="btn btn-primary me-2" (click)="update()">Update</button>
+        <button class="btn btn-danger" (click)="delete()">Delete</button>
+        <button class="btn btn-secondary" (click)="goBack()">Back</button>
+    </div>
+</div>

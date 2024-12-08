@@ -1,0 +1,18 @@
+<div class="container mt-4">
+    <h2 class="text-primary mb-4">Books</h2>
+    
+    <ul class="list-group">
+        <li 
+            *ngFor="let book of books" 
+            class="list-group-item list-group-item-action">
+            
+            <a 
+                routerLink="/bookdetails/{{book.id}}" 
+                class="text-decoration-none text-dark d-flex align-items-center">
+                
+                <span class="badge bg-primary me-3">{{ book.id }}</span>
+                {{ book.title }}
+            </a>
+        </li>
+    </ul>
+</div>

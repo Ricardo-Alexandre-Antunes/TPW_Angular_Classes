@@ -1,0 +1,36 @@
+<h1 class="text-center mb-4">
+  <a routerLink="/top" class="text-decoration-none text-primary" (click)="setActiveTab('')">{{title}}</a>
+</h1>
+
+<div class="tabs">
+  <div class="tab-buttons d-flex justify-content-center mb-4">
+    <a routerLink="/authors" class="me-3">
+      <button 
+        class="tab-button btn btn-outline-primary" 
+        [class.active]="activeTab === 'authors'" 
+        (click)="setActiveTab('authors')">
+        Authors
+      </button>
+    </a>
+    <a routerLink="/publishers" class="me-3">
+      <button 
+        class="tab-button btn btn-outline-primary" 
+        [class.active]="activeTab === 'publishers'" 
+        (click)="setActiveTab('publishers')">
+        Publishers
+      </button>
+    </a>
+    <a routerLink="/books" class="me-3">
+      <button 
+        class="tab-button btn btn-outline-primary" 
+        [class.active]="activeTab === 'books'" 
+        (click)="setActiveTab('books')">
+        Books
+      </button>
+    </a>
+  </div>
+
+  <div class="tab-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

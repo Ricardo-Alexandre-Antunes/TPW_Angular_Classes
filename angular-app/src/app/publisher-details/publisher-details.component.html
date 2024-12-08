@@ -1,0 +1,59 @@
+<div *ngIf="publisher" class="container mt-4">
+    <h2 class="mb-4 text-primary">Information on {{publisher.name | uppercase}}</h2>
+    
+    <div class="mb-3">
+        <span class="fw-bold">Num:</span> {{publisher.id}}
+    </div>
+    
+    <form>
+        <div class="mb-3">
+            <label for="name" class="form-label fw-bold">Name:</label>
+            <input
+                id="name"
+                [(ngModel)]="publisher.name"
+                placeholder="Enter name"
+                class="form-control"
+                [ngModelOptions]="{standalone: true}"
+            />
+        </div>
+
+        <div class="mb-3">
+            <label for="city" class="form-label fw-bold">City:</label>
+            <input
+                id="city"
+                [(ngModel)]="publisher.city"
+                placeholder="Enter city"
+                class="form-control"
+                [ngModelOptions]="{standalone: true}"
+            />
+        </div>
+
+        <div class="mb-3">
+            <label for="country" class="form-label fw-bold">Country:</label>
+            <input
+                id="country"
+                [(ngModel)]="publisher.country"
+                placeholder="Enter country"
+                class="form-control"
+                [ngModelOptions]="{standalone: true}"
+            />
+        </div>
+
+        <div class="mb-3">
+            <label for="website" class="form-label fw-bold">Website:</label>
+            <input
+                id="website"
+                [(ngModel)]="publisher.website"
+                placeholder="Enter website"
+                class="form-control"
+                [ngModelOptions]="{standalone: true}"
+            />
+        </div>
+    </form>
+    
+    <div>
+        <button class="btn btn-primary me-2" (click)="update()">Update</button>
+        <button class="btn btn-danger" (click)="delete()">Delete</button>
+        <button class="btn btn-secondary" (click)="goBack()">Back</button>
+    </div>
+</div>

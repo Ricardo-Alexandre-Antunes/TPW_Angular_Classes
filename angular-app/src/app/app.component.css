@@ -1,0 +1,35 @@
+.tabs {
+    margin-top: 1em;
+  }
+  
+  .tab-buttons {
+    display: flex;
+    gap: 1em;
+    margin-bottom: 1em;
+  }
+  
+  .tab-button {
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    color: #444;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .tab-button:hover {
+    background: #e0e0e0;
+  }
+  
+  .tab-button.active {
+    background: #369;
+    color: white;
+    border-color: #369;
+  }
+  
+  .tab-content {
+    border: 1px solid #ccc;
+    padding: 1em;
+    background: #f9f9f9;
+  }
+  
